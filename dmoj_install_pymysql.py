@@ -1,4 +1,5 @@
-import pymysql
-
-pymysql.install_as_MySQLdb()
-pymysql.version_info = (1, 4, 0, "final", 0)
+try:
+    import pymysql
+    pymysql.install_as_MySQLdb()
+except ImportError:
+    pass  # Bỏ qua nếu không có pymysql (khi dùng PostgreSQL)
