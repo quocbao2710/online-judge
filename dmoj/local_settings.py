@@ -45,11 +45,9 @@ CACHES = {
 import dj_database_url
 import os
 
-# Tự động đọc DATABASE_URL từ Render (hoặc dùng MySQL local nếu có)
 DATABASE_URL = os.environ.get('DATABASE_URL')
 
 if DATABASE_URL:
-    # Dùng PostgreSQL khi deploy trên Render
     DATABASES = {
         'default': dj_database_url.config(
             conn_max_age=600,
@@ -57,7 +55,6 @@ if DATABASE_URL:
         )
     }
 else:
-    # Dùng SQLite khi chạy local (không cần MySQL)
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',
@@ -65,7 +62,7 @@ else:
         }
     }
 
-ALLOWED_HOSTS = ['*']  # Cho phép tất cả tên miền (an toàn cho demo)
+ALLOWED_HOSTS = ['*']
 
 # Sessions.
 # Documentation: <https://docs.djangoproject.com/en/1.11/topics/http/sessions/>
