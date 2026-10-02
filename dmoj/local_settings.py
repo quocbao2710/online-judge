@@ -29,11 +29,10 @@ DMOJ_PROBLEM_DATA_ROOT = "/path/to/problem/folder"
 # Documentation: <https://docs.djangoproject.com/en/1.11/topics/cache/>
 CACHES = {
     "default": {
-        "BACKEND": "judge.cache_handler.CacheHandler",
+        "BACKEND": "django.core.cache.backends.locmem.LocMemCache",
     },
     "primary": {
-        "BACKEND": "django.core.cache.backends.memcached.PyMemcacheCache",
-        "LOCATION": "127.0.0.1:11211",
+        "BACKEND": "django.core.cache.backends.locmem.LocMemCache",
     },
 }
 
