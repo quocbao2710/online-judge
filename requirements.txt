@@ -45,3 +45,5 @@ python-socketio[client]
 fastapi_poe
 xxhash
 pymysql
+mysqlclient
+dj-database-url
