@@ -44,6 +44,7 @@ lxml_html_clean
 python-socketio[client]
 fastapi_poe
 xxhash
-pymysql
-mysqlclient
-dj-database-url
+pymysql==1.1.1
+dj-database-url==2.1.0
+gunicorn==22.0.0
+
